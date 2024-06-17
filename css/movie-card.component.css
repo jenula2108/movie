@@ -1,0 +1,23 @@
+.movie-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+}
+.movie-card__button {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.movie-card__button_btn {
+  max-width: 250px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  transition-duration: 0.2s;
+}
+.movie-card__button_btn:hover {
+  outline: 5px solid black;
+}
+.movie-card__button_btn:active {
+  transform: scale(0.95);
+}

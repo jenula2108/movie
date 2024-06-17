@@ -1,0 +1,15 @@
+<div>
+   <app-movie-card [data]="movie" (addFavorites)="handelAddFavorites(movie.title)"
+      (addWathList)="handelAddWathList(movie.title)">
+
+   </app-movie-card>
+   <div>
+      <p>олюблене</p>
+      <p>{{favorits}}</p>
+
+   </div>
+   <div>
+      <p>подивитись</p>
+      <p>{{wathList}}</p>
+   </div>
+</div>

@@ -1,0 +1,33 @@
+
+
+.movie-card {
+   display: flex;
+   flex-direction: column;
+   max-width: 400px;
+   &__image {
+   }
+
+   &__details {
+   }
+
+   &__button {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      
+      &_btn {
+         max-width: 250px;
+         padding: 10px 20px;
+         border-radius: 5px;
+         margin-bottom: 10px;
+         transition-duration: 0.2s;
+         &:hover{
+            outline: 5px solid black;
+         }
+         &:active{
+            transform: scale(0.95);
+         }
+      }
+   }
+}
+
