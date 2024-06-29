@@ -1,12 +1,10 @@
-<div id={{data.id}} class="movie-card">
-   <img [src]="data.backdrop_path" alt="{{ data.title }}" class="movie-card__image">
-   <div class="movie-card__details">
-      <h2>{{ data.title }}</h2>
-      <p>{{ data.overview }}</p>
-      <p>Рейтинг: {{ data.rating }}</p>
-      <div class="movie-card__button">
-         <button class="movie-card__button_btn" (click)="addToFavorites()">Додати до улюблених</button>
-         <button class="movie-card__button_btn" (click)="addToWathList()">Додати до списку перегляду</button>
-      </div>
-   </div>
+<img [src]="data.backdrop_path" alt="{{ data.title }}" class="movie-card__image">
+<div class="movie-card__details">
+   <h2>{{ data.title }}</h2>
+   <p>{{ data.overview }}</p>
+</div>
+<p>Рейтинг: {{ data.rating }}</p>
+<div class="movie-card__button">
+   <button class="movie-card__button_btn" (click)="addToFavorites()">Додати до улюблених</button>
+   <button class="movie-card__button_btn" (click)="addToWathList()">Додати до списку перегляду</button>
 </div>

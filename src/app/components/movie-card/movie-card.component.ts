@@ -1,4 +1,4 @@
-import { Component,EventEmitter,Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-movie-card',
@@ -8,13 +8,13 @@ import { Component,EventEmitter,Input, Output } from '@angular/core';
   styleUrl: './movie-card.component.scss'
 })
 export class MovieCardComponent {
-@Input() data:any
-@Output() addFavorites= new EventEmitter<any>()
-@Output() addWathList= new EventEmitter<any>()
-addToFavorites(){
-this.addFavorites.emit(this.data)
-}
-addToWathList(){
-this.addWathList.emit(this.data)
-}
+  @Input() data: any
+  @Output() addFavorites = new EventEmitter<any>()
+  @Output() addWathList = new EventEmitter<any>()
+  addToFavorites() {
+    this.addFavorites.emit(this.data)
+  }
+  addToWathList() {
+    this.addWathList.emit(this.data)
+  }
 }

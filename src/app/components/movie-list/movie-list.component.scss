@@ -1,3 +1,37 @@
-.block {
-   color: red;
+
+.wraper{
+   max-width: 1270px;
+   margin: 0 auto;
 }
+.list{
+   display: flex;
+   gap: 5px;
+   flex-wrap: wrap;
+   &__checked {
+      display: flex;
+      max-width: 600px;
+      justify-content: space-between;
+      gap: 20px;
+      & button{
+         max-width: 250px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            transition-duration: 0.2s;
+            &:hover{
+               outline: 5px solid black;
+            }
+            &:active{
+               transform: scale(0.95);
+            }
+      }
+      &_title {
+      }
+
+      &_time {
+         text-align: right;
+         flex: 1 1 auto;
+      }
+   }
+}
+
