@@ -1,8 +1,9 @@
 import { Component, Input } from '@angular/core';
-import { MovieCardComponent } from '../movie-card/movie-card.component';
 import { log } from 'node:console';
 import { off } from 'node:process';
-import { SumePipesPipe } from "../../pipes/sume-pipes.pipe";
+import { TimePipesPipe } from "../../pipes/time-pipes.pipe";
+import { MaterialMovieCardComponent } from '../material-movie-card/material-movie-card.component';
+import { movies } from '../mock-data';
 
 
 @Component({
@@ -10,23 +11,27 @@ import { SumePipesPipe } from "../../pipes/sume-pipes.pipe";
   standalone: true,
   templateUrl: './movie-list.component.html',
   styleUrl: './movie-list.component.scss',
-  imports: [MovieCardComponent, SumePipesPipe]
+  imports: [TimePipesPipe, MaterialMovieCardComponent]
 })
 export class MovieListComponent {
   favorits: any[] = []
   wathList: any[] = []
-  @Input() someData: any
-  handelAddFavorites(el: any) {
-    if (!this.favorits.includes(el)) this.favorits.push(el)
+  public dataMovies = movies
+  handelAddFavorites(movie: any) {
+    if (!this.favorits.some(el => el.id === movie.id)) this.favorits.push({ ...movie })
+    const index = this.favorits.findIndex(el => el.id === movie.id);
+    this.favorits[index].chaced = true
     console.log(this.favorits);
 
   }
-  handelAddWathList(el: any) {
-    if (!this.wathList.includes(el)) this.wathList.push(el)
+  handelAddWathList(movie: any) {
+    if (!this.wathList.some(el => el.id === movie.id)) this.wathList.push({ ...movie })
+    const index = this.wathList.findIndex(el => el.id === movie.id);
+    this.wathList[index].chaced = true
   }
-  removeCheckedMovie(title: any, arr: any) {
+  removeCheckedMovie(data: any, arr: any) {
     let newArr
-    newArr = arr.filter((item: any) => item !== title);
+    newArr = arr.filter((item: any) => item !== data);
     arr === this.favorits ? this.favorits = newArr : this.wathList = newArr
   }
 }

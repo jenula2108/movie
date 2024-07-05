@@ -1,0 +1,21 @@
+<mat-card class="example-card" appearance="outlined">
+    <img mat-card-image [src]="data.backdrop_path" alt="{{ data.title }}">
+    <mat-card-content class="movie-card__details">
+        <h2 class="movie-card__title">{{ data.title }}</h2>
+        <p class="movie-card__about">{{ data.overview }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        @if (!data.chaced) {
+        <button mat-button class="mat-card__button" (click)="addToFavorites()">Додати до улюблених</button>
+        }
+        @if (!data.chaced) {
+        <button mat-button class="mat-card__button" (click)="addToWathList()">Додати до списку перегляду</button>
+        }
+        @if (data.chaced) {
+        <p class="list__checked_time">{{data.time|timePipes}}</p>
+        }
+        @if (data.chaced) {
+        <button mat-button (click)="removeToMovie()">видалети</button>
+        }
+    </mat-card-actions>
+</mat-card>

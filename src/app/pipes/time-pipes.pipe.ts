@@ -1,10 +1,10 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'sumePipes',
+  name: 'timePipes',
   standalone: true
 })
-export class SumePipesPipe implements PipeTransform {
+export class TimePipesPipe implements PipeTransform {
 
   transform(value: number): string {
     let hours = Math.floor(value / 60).toString()
