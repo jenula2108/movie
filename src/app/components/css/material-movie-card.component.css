@@ -1,0 +1,75 @@
+:host {
+  display: flex;
+}
+
+.example-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.movie-card__details {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.movie-card__title {
+  min-height: 60px;
+}
+
+.movie-card__about {
+  flex: 1 1 auto;
+}
+
+mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+}
+mat-card-actions p {
+  margin-bottom: 0;
+}
+
+.card__container {
+  display: flex;
+  flex-direction: column;
+}
+.card__image {
+  transition-duration: 0.2s;
+}
+.card__image:hover {
+  transform: scale(1.03);
+}
+.card__image img {
+  width: 100%;
+}
+.card__details {
+  flex: 1 1 auto;
+  padding: 10px;
+}
+.card__details_title {
+  min-height: 60px;
+}
+.card__actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 10px 0 10px;
+}
+.card__actions_btn {
+  max-width: 150px;
+  border-radius: 7px;
+  transition-duration: 0.2s;
+}
+.card__actions_btn:hover {
+  transform: scale(1.03);
+  background-color: rgba(69, 69, 223, 0.541);
+  color: wheat;
+}
+.card__actions_btn:active {
+  transform: none;
+}/*# sourceMappingURL=material-movie-card.component.css.map */

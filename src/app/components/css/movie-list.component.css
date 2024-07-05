@@ -4,30 +4,16 @@
 }
 
 .list {
-  display: flex;
-  gap: 5px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+  gap: 10px;
 }
+
 .list__checked {
-  display: flex;
-  max-width: 600px;
-  justify-content: space-between;
-  gap: 20px;
-}
-.list__checked button {
-  max-width: 250px;
-  padding: 10px 20px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  transition-duration: 0.2s;
-}
-.list__checked button:hover {
-  outline: 5px solid black;
-}
-.list__checked button:active {
-  transform: scale(0.95);
-}
-.list__checked_time {
-  text-align: right;
-  flex: 1 1 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
 }/*# sourceMappingURL=movie-list.component.css.map */

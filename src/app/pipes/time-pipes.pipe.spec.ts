@@ -1,8 +1,8 @@
-import { SumePipesPipe } from './sume-pipes.pipe';
+import { TimePipesPipe } from './time-pipes.pipe';
 
 describe('SumePipesPipe', () => {
   it('create an instance', () => {
-    const pipe = new SumePipesPipe();
+    const pipe = new TimePipesPipe();
     expect(pipe).toBeTruthy();
   });
 });

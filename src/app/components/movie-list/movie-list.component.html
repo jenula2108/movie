@@ -1,9 +1,9 @@
 <div class="wraper">
    <div class="list">
-      @for (movie of someData; track movie.id){
-      <app-movie-card [data]="movie" (addFavorites)="handelAddFavorites(movie)"
-         (addWathList)="handelAddWathList(movie)">
-      </app-movie-card>
+      @for (movie of dataMovies; track movie.id){
+      <app-material-movie-card [data]="movie" (addFavorites)="handelAddFavorites(movie)"
+         (addWathList)="handelAddWathList(movie)" (removeMovie)="removeCheckedMovie(movie,favorits)">
+      </app-material-movie-card>
       }
    </div>
    <div>
@@ -13,13 +13,10 @@
          <p>додайте выдео до олюбленого</p>
          }
          @else {
-         <div>
-            @for (item of favorits; track $index) {
-            <div class="list__checked">
-               <p class="list__checked_title">{{item.title}}</p>
-               <p class="list__checked_time">{{item.time|sumePipes}}</p>
-               <button (click)="removeCheckedMovie(item,favorits)">видалети</button>
-            </div>
+         <div class="list__checked">
+            @for (item of favorits; track item.id) {
+            <app-material-movie-card [data]="item" (removeMovie)="removeCheckedMovie(item,favorits)">
+            </app-material-movie-card>
             }
          </div>
          }
@@ -33,13 +30,10 @@
          <p>додайте відео до бажано подивитись</p>
          }
          @else {
-         <div>
-            @for (item of wathList; track $index) {
-            <div class="list__checked">
-               <p class="list__checked_title">{{item.title}}</p>
-               <p class="list__checked_time">{{item.time|sumePipes}}</p>
-               <button (click)="removeCheckedMovie(item,wathList)">видалети</button>
-            </div>
+         <div class="list__checked">
+            @for (item of wathList; track item.id) {
+            <app-material-movie-card [data]="item" (removeMovie)="removeCheckedMovie(item,wathList)">
+            </app-material-movie-card>
             }
          </div>
          }
